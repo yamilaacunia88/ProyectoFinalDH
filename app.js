@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3001;
 let fs = require('fs');
-//implemento rutas
+//implementando rutas
 
 app.use(express.static('public'));
 
