@@ -14,13 +14,25 @@ h3{
 }
 
 p{
-  font-size: 12px;
+  font-size: 25px;
 }
+
+.logo {
+ align-items: center;
+ border-radius: block black 500px;
+ opacity: 50%;
+  position: static;
+ left: 100px;
+ top:50px;
+ 
+}
+
 
 div.top-header{
   display: flex;
   flex-wrap: wrap;
   padding: 5%;
+  background-color: #666;
 }
 
 header div.top-header p{
@@ -154,7 +166,7 @@ main section article img{
 
 main section article i,
 .discount{
-  color:#1c8229 ;
+  color:#3c3e3c ;
 }
 
 .fa-truck:hover{

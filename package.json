@@ -1,24 +1,18 @@
 {
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "name": "proyectofinaldh",
+  "name": "html_css",
   "version": "1.0.0",
+  "description": "",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yamilaacunia88/ProyectoFinalDH.git"
-  },
-  "keywords": [],
+    "test": "echo \"Error: no test specified\" && exit 1", 
+    "start": "node app.js"
+      },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yamilaacunia88/ProyectoFinalDH/issues"
+  "dependencies": {
+    "express": "^4.17.1"
   },
-  "homepage": "https://github.com/yamilaacunia88/ProyectoFinalDH#readme",
-  "description": ""
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
