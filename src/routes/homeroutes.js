@@ -1,12 +1,14 @@
+
 const express = require('expres')
 const router = express.Router()
 const controller = require('../controllers/mainController');
 
+router.get("/", controller.home)
 
-router.get("/", controller.dashboard)
-
-router.get("/views/dashboard.html", (req, res) => {
-  res.sendFile(__dirname + "./views/dashboard.html");
+ 
+ router.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "./views/home.html"));
 });
+
 
 module.exports = router

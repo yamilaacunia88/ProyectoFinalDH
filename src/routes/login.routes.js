@@ -1,7 +1,6 @@
-
 const express = require('expres')
 const router = express.Router()
-const controller = require('../controllers/omeController');
+const controller = require('../controllers/mainController');
 
 router.get("/", controller.login)
 

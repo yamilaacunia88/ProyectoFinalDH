@@ -1,6 +1,6 @@
 const express = require('expres')
 const router = express.Router()
-const controller = require('../controllers/error404Controller');
+const controller = require('../controllers/mainController');
 
  router.get("/",controller.error404)
  router.get('*', (req,res) =>{
