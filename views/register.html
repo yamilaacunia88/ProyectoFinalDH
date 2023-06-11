@@ -6,19 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/stylesregister.css" />
+      rel="stylesheet"/> 
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
+    <link rel="stylesheet" href="../public/css/stylesregister.css" />
   </head>
   <body>
     <header>
       <div class="top-header">
         <div class="logo">
-          <a href="home.html"><img src="img/images.png" alt="Movies" /></a>
+          <a href="home.html"><img src="../public/img/images.png" alt="Movies" /></a>
         </div>
         <div class="form" action="#home">
           <div class="input">Buscar tus pelis favoritas</div>
@@ -34,9 +30,9 @@
       <nav class="navegador">
         <ul class="navegador-izquierda">
           <li><a href="#">Tus elegidas</a></li>
-|          <li><a href="#">Estrenos</a></li>
+       <li><a href="#">Estrenos</a></li>
           <li><a href="#">Clasicas</a></li>
-          <li><a href="#">Ayuda</a></li>
+          <li><a href="../views/error404.html">Ayuda</a></li>
         </ul>
         <ul class="navegador-derecha">
           <li>
@@ -60,13 +56,12 @@
 <main class="register">
   <form action="/" >
      <div></div>
-      <label for="name">Nombre de Usuario</label> 
-      <br>
-      <input type="text" name="name" placeholder="Nombre y apellido">
+  
   </div>
   <div></div>
       <label for="user">Nombre de Usuario</label> 
   <br>    
+  <br>
       <input type="text" name="user" placeholder="Nombre de usuario">
   </div>
   <div>
@@ -77,9 +72,11 @@
       <br>
       <label for="birth_date"><b>Fecha de nacimiento</b></label>
       <br>
+    
       <input type="date" name="birth_date" id="birth_date">
       <br>
-      <input type="text" name="addres" placeholder="Domicilio">
+      <br>
+ 
       <h4>Perfil del usuario</h4>
       <div class="profile">
           <input type="radio" name="profile" value="usuario" id="us uario">
@@ -119,6 +116,8 @@
       <input type="password" name="pass" placeholder="Elegí tu contraseña">
       <input type="password" name="pass_confirm" placeholder="Confirmá tu contraseña">
       <br>
+      
+      <p> Debe contener 8 carácteres como minimo. Númericos, alfanumericos y un carácter especial.</p>
       <br>
       <input type="submit" value="Enviar">
       <input type="reset" value="Borrar">

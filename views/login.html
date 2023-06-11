@@ -4,21 +4,15 @@
     <meta charset="UTF-8" />
     <title>Bienvenidxs a Movies</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="css/styleslogin.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"/>
+    <link rel="stylesheet" href="../public/css/styleslogin.css" />
   </head>
   <body>
     <header>
       <div class="top-header">
         <div class="logo">
-          <a href="home.html"><img src="img/images.png" alt="Movies" /></a>
+          <a href="../views/home.html"><img src="../public/img/images.png" alt="Movies" /></a>
         </div>
         <div class="form" action="#">
           <div class="input">Buscar tus pelis favoritas</div>
@@ -36,33 +30,29 @@
           <li><a href="#">Tus elegidas</a></li>
           <li><a href="#">Estrenos</a></li>
           <li><a href="#">Clasicas</a></li>
-          <li><a href="#">Ayuda</a></li>
+          <li><a href="../views/error404.html">Ayuda</a></li>
         </ul>
+        <br>
+        <br>
         <ul class="navegador-derecha">
-          <li>
-            <a href="/views/register.html"
-              >Unirte ahora <i class="far fa-id-card"></i
-            ></a>
-          </li>
-          <li>
-            <a href="/views/login.html"
-              >Iniciar sesión <i class="fas fa-sign-in-alt"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#">Mis Pelis <i class="fas fa-shopping-basket"></i></a>
-          </li>
+            <li><a href="../views/register.html">Unirte Ahora <i class="far fa-id-card"></i></a></li>
+            <li><a href="../views/dashboard.html">Mis Pelis <i class="fas fa-shopping-basket"></i></a></li>
+            <li><a href="../views/logout.html">Salir <i class="fas fa-shopping-basket"></i></a></li>
+
         </ul>
+    </nav>
       </nav>
-      <a href="#" class="hamburguer-button"> <i class="fas fa-bars"></i></a>
+      
     </header>
     <main class="login">
       <form action="dashboard.html">
         <p class="form-login">Ingresa y Validá tus datos</p>
+        <br>
         <label class="name-login">Nombre de usuario:</label>
         <input type="text" name="user" placeholder="Nombre de usuario" />
         <label class="name-login">Ingrese su contraseña:</label>
-        <input type="password" name="pass" placeholder="Elegí tu contraseña" />
+                <input type="password" name="pass" placeholder="Elegí tu contraseña" />
+                <br>
         <button type="submit">Enviar</button>
       </form>
     </main>
