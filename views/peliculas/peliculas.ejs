@@ -1,0 +1,13 @@
+<%- include('../partials/peliculas.ejs')%>
+
+<h1>Listado de peliculas</h1>
+<br>
+<ul>
+<% for (let index = 0; index < peliculasList.length; index++) {%>
+  <li>
+    <a href="/peliculas/<%= peliculasList[index].id %>"><%= peliculasList[index].name %></a> 
+  </li>
+  <% } %>
+</ul> 
+
+<%- include('../partials/') %>
