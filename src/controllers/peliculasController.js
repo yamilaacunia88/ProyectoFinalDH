@@ -1,17 +1,19 @@
 const fs = require('fs');
 const path = require('path');
-const peliculasPath = path.join(__dirname,'../data/peliculas.json');
+const peliculasPath = path.join(__dirname,'../database/models.js');
 
 controller.home = { 
   getPeliculas: () =>{
     return JSON.parse(fs.readFileSync(peliculasPath,'utf-8'));
   },
+};
   index:(req,res) => {
   res.render ('peliculas/index',{
   title:'Listado de peliculas',
   peliculasList: peliculasController.getPeliculas() 
 });
-  },
+  }
+
   show: (req,res) =>{
     let peliculasId = req.params.id;
     let peliculas = peliculasController.getPeliculas().find(peliculas => peliculas.id == peliculasId);
@@ -21,6 +23,8 @@ controller.home = {
       pelicula: peliculas 
    },
 
+  }
+
 create: (req,res) =>{
   let peliculasId = req.params.id;
   let peliculas = peliculasController.getPeliculas().find(peliculas => peliculas.id == peliculasId);
@@ -29,6 +33,7 @@ create: (req,res) =>{
     title:'mi peli',
     pelicula: peliculas 
 });
+
 store: (req,res) =>{
   let peliculasId = req.params.id;
     let peliculas = peliculasController.getPeliculas().find(peliculas => peliculas.id == peliculasId);
@@ -46,7 +51,7 @@ edit: (req,res) =>{
     title:'mi peli',
     pelicula: peliculas 
 });
- },
+ }
  update: (req,res) =>{ 
   let peliculasId = req.params.id;
   let pelicula = peliculasController.getPeliculas().find(peliculas => peliculas.id == peliculasId);
@@ -63,14 +68,16 @@ edit: (req,res) =>{
 
   fs.writeFileSync(peliculasPath,JSON.stringify(peliculas,null, ''));
   res.redirect('/peliculas');
-});
-  },
+ };
+
+
  delete: (req,res) =>{
   //implementar metodo
  });
+
  destroy: (req,res) =>{
   //implemetar metodo
  });
 
 
-module.exports = peliculasController;
+module.exports = peliculasController
