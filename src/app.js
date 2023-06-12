@@ -13,8 +13,10 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(homeroutes);
 app.use(peliculasRoutes);
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());
 
-app.use(methodOverride(':method'));
+app.use(methodOverride('_method'));
 
 app.listen(PORT, () => {
   console.log(`server listening on ${PORT}`);

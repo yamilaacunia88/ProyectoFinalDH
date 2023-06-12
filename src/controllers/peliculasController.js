@@ -20,25 +20,57 @@ controller.home = {
       title:'mi peli',
       pelicula: peliculas 
    },
-   
+
 create: (req,res) =>{
-  //implementar metodo
-},
+  let peliculasId = req.params.id;
+  let peliculas = peliculasController.getPeliculas().find(peliculas => peliculas.id == peliculasId);
+ 
+ res.render ('peliculas/create',{
+    title:'mi peli',
+    pelicula: peliculas 
+});
 store: (req,res) =>{
-  //implementar metodo
-},
+  let peliculasId = req.params.id;
+    let peliculas = peliculasController.getPeliculas().find(peliculas => peliculas.id == peliculasId);
+   
+   res.render ('peliculas/store',{
+      title:'mi peli',
+      pelicula: peliculas 
+});
+
 edit: (req,res) =>{
-  //implementar metodo
-},
-update: (req,res) =>{
-  //implementar metodo
+  let peliculasId = req.params.id;  
+  let peliculas = peliculasController.getPeliculas().find(peliculas => peliculas.id == peliculasId);
+ 
+ res.render ('peliculas/edit',{
+    title:'mi peli',
+    pelicula: peliculas 
+});
  },
+ update: (req,res) =>{ 
+  let peliculasId = req.params.id;
+  let pelicula = peliculasController.getPeliculas().find(peliculas => peliculas.id == peliculasId);
+  let peliculas = peliculasController.getPeliculas();
+
+
+ let peliculaUpdated = peliculas.forEach((pelicula,index) => {
+  if (pelicula.id == peliculasId){
+    pelicula.name = req.body.name;
+    pelicula.year = req.body.year;
+    peliculas[index] = pelicula; 
+  }
+ });
+
+  fs.writeFileSync(peliculasPath,JSON.stringify(peliculas,null, ''));
+  res.redirect('/peliculas');
+});
+  },
  delete: (req,res) =>{
   //implementar metodo
- },
+ });
  destroy: (req,res) =>{
-  //implementar metodo
- },
+  //implemetar metodo
+ });
 
 
 module.exports = peliculasController;

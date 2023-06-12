@@ -1,0 +1,13 @@
+<%- include('../views/peliculas/peliculas')%>
+
+<h1> Editando pelicula</h1>
+<form method="post" action="/peliculas/edit/<%= peliculaId%>?_method=PUT">
+<label for="name">Nombre</label>
+ <input type="text" name="name" value="<%= peliculas.name%>">
+
+ <br>
+ <label for="year">año</label>
+ <input type="text" name="name" value="<%= peliculas.year%>">
+ <button type="submit">EDITAR</button>
+</form>
+<%- include('../partials/footer.ejs')%>

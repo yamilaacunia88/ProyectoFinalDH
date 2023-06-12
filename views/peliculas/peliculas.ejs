@@ -1,12 +1,25 @@
-<%- include('../partials/peliculas.ejs')%>
+<%- include('../views/peliculas/peliculas')%>
 
 <h1>Listado de peliculas</h1>
 <br>
 <ul>
 <% for (let index = 0; index < peliculasList.length; index++) {%>
   <li>
+<% for (let index = 0; index < peliculasList.length; index++) {%>
+  <li>
     <a href="/peliculas/<%= peliculasList[index].id %>"><%= peliculasList[index].name %></a> 
-  </li>
+   </li>
+   <% } %>
+   -<%- peliculasList.foreach(peliculas => {
+    <li>
+    <a href="/peliculas/ <%=<pelicula.id %> " > <%= pelicula.name %></a>  
+   -
+    <a href="/peliculas/edit <%=<pelicula.id %> " > <%= editar %></a>  
+   -
+    <a href="/peliculas/delete <%=<pelicula.id %> " > <%= eliminar%></a>  
+   </li>
+   }); %>
+
   <% } %>
 </ul> 
 
