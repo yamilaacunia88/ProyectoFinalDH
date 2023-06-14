@@ -1,24 +1,40 @@
-const express = require('express');
-const app = express()
-const path = require("path");
-const PORT = process.env.PORT || 3001;
-const homeroutes = require ('./routes/homeroutes' );
+
+const session = require('express-session');
 const methodOverride = require('method-override');
-const peliculasRoutes = require('../src/routes/peliculasroutes'); 
+const port = process.env.PORT || 3008;// deje s u
+const PORT = process.env.PORT || 3007;
 
-app.use(express.static('public'));
-
-app.set('view engine', 'ejs');  
-app.set('views', path.join(__dirname, 'views'));
-
-app.use(homeroutes);
-app.use(peliculasRoutes);
-app.use(express.urlencoded({extended:false}));
+const mainRoutes = require('./routes/mainRoutes');
+const indexRouter = require('./routes/index');
+const moviesRoutes = require('./routes/moviesRoutes');
+const genresRoutes = require('./routes/genresRoutes');
+const app = express();
+// view engine setup
+app.set('views', path.resolve(__dirname, './views'));
+app.set('view engine', 'ejs');
+// Middlewares
+app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-app.use(methodOverride('_method'));
-
-app.listen(PORT, () => {
-  console.log(`server listening on ${PORT}`);
-});
-
+app.use(cookieParser());
+app.use(session({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: true,
+    // cookie: { maxAge: 60000 } // 60 segundos
+  }))
+  app.use(methodOverride('_method'))
+  app.use(loggMiddleware)
+  app.use(mainRoutes);
+  app.use(express.static(path.resolve(__dirname, '../public')));
+  //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
+  app.use(express.urlencoded({ extended: false }));
+  app.use('/', indexRouter);
+  app.use(moviesRoutes);
+  app.use(genresRoutes);
+  app.use(userRoutes)
+  app.use(express.json());
+  
+  app.listen(PORT, () => {
+      console.log("Servidor corriendo en http://localhost:" + PORT);
+  });
