@@ -12,7 +12,7 @@
     <header>
       <div class="top-header">
         <div class="logo">
-          <a href="../views/home.html"><img src="../public/img/images.png" alt="Movies" /></a>
+          <a href="../views/index.ejs"><img src="../public/img/images.png" alt="Movies" /></a>
         </div>
         <div class="form" action="#">
           <div class="input">Buscar tus pelis favoritas</div>
@@ -44,18 +44,24 @@
       </nav>
       
     </header>
-    <main class="login">
-      <form action="../views/dashboard.html">
-        <p class="form-login">Ingresa y Validá tus datos</p>
-        <br>
-        <label class="name-login">Nombre de usuario:</label>
-        <input type="text" name="user" placeholder="Nombre de usuario" />
-        <label class="name-login">Ingrese su contraseña:</label>
-                <input type="password" name="pass" placeholder="Elegí tu contraseña" />
-                <br>
-        <button type="submit">Enviar</button>
+    <main>
+      <form id="form" action="/login" method="post" class="register-form">
+          <h3 class="register-title">Ingresar con Contraseña</h3>
+          <label for="email" class="register-label">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email" class="register-input">
+          <% if (locals.error && error.email) { %>
+          <p style="color: red;"><%= error.email.msg %></p>
+          <% } %>
+
+          <label for="password" class="register-label">Contraseña:</label>
+          <input type="password" id="password" name="password" placeholder="Contraseña" class="register-input">
+          <% if (locals.error && error.password) { %>
+          <p style="color: red;"><%= error.password.msg %></p>
+          <% } %>
+
+          <button type="submit" class="submit">Iniciar sesión</button>
       </form>
-    </main>
+  </main>
     <footer></footer>
   </body>
 </html>

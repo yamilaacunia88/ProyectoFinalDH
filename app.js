@@ -4,10 +4,10 @@ const methodOverride = require('method-override');
 const port = process.env.PORT || 3008;// deje s u
 const PORT = process.env.PORT || 3007;
 
-const mainRoutes = require('./routes/mainRoutes');
-const indexRouter = require('./routes/index');
-const moviesRoutes = require('./routes/moviesRoutes');
-const genresRoutes = require('./routes/genresRoutes');
+const mainRoutes = require('./src/routes/mainRoutes');
+const indexRouter = require('./src/routes/index');
+const moviesRoutes = require('./src/routes/moviesRoutes');
+const genresRoutes = require('./src/routes/genresRoutes');
 const app = express();
 // view engine setup
 app.set('views', path.resolve(__dirname, './views'));

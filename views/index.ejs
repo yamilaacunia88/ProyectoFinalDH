@@ -6,13 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-        <link rel="stylesheet" href="../public/css/styles.css">
+        <link rel="stylesheet" href="../public/css/styleslogin.css">
     </head>
     <body>
         <header>
             <div class="top-header">
                 <div class="logo"> 
-                    <a href="../views/home.html"><img src="../public/img/images.png" alt="Movies"></a>
+                    <a href="../views/index.ejs"><img src="../public/img/images.png" alt="Movies"></a>
   
                 </div>
                 <div class="form" action="#" >
@@ -31,8 +31,8 @@
                 <br>
                 <br>
                 <ul class="navegador-derecha">
-                    <li><a href="../views/login.html">Iniciar Sesión <i class="fas fa-sign-in-alt"></i></a></li>
-                    <li><a href="../views/register.html">Unirte Ahora <i class="far fa-id-card"></i></a></li>
+                    <li><a href="../views/login.ejs">Iniciar Sesión <i class="fas fa-sign-in-alt"></i></a></li>
+                    <li><a href="../views/register.ejs">Unirte Ahora <i class="far fa-id-card"></i></a></li>
                     <li><a href="../views/dashboard.html">Mis Pelis <i class="fas fa-shopping-basket"></i></a></li>
                     <li><a href="../views/logout.html">Salir <i class="fas fa-shopping-basket"></i></a></li>
 
@@ -40,8 +40,20 @@
             </nav>
            
         </header>
+<main>
+    <ul>
+        <li><a href="/movies">Listado de Películas</a></li>
+        <% if (locals.userLogged) { %>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/logout">Logout</a></li>
+        <% } else { %>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
+        <% } %>
+      </ul>
+</main>
+        
         <footer>
-           
         </footer>
     </body>
 </html>

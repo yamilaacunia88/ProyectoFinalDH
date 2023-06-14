@@ -1,6 +1,6 @@
 *{
-  margin: 0px;
-  padding: 0px;    
+  margin: 2px;
+  padding: 3px;    
   box-sizing: border-box;
 }
  body{
@@ -11,7 +11,11 @@
   background-size: 65em;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
+logo404 {
+  width: auto;
+  height: auto;
+   
+}
 h1{
   text-align: center;
   background-color: rgb(233, 14, 14);
