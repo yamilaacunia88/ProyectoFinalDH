@@ -16,8 +16,3 @@ IDENTIFICANDO AL ADMINISTRADOR Creá los middlewares y ajustes necesarios para q
 
 
 
-Estas credenciales te permitirán acceder a las funcionalidades y privilegios de administrador dentro del sistema.
-Usuario: admin@gmail.com
-
-Contraseña: 123456
-

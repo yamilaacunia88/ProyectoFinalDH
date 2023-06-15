@@ -1,14 +1,19 @@
-
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const methodOverride = require('method-override');
-const port = process.env.PORT || 3008;// deje s u
+//const port = process.env.PORT || 3008;// deje s u
 const PORT = process.env.PORT || 3007;
 
 const mainRoutes = require('./src/routes/mainRoutes');
 const indexRouter = require('./src/routes/index');
 const moviesRoutes = require('./src/routes/moviesRoutes');
 const genresRoutes = require('./src/routes/genresRoutes');
+const userRoutes = require('./src/routes/usersRoutes');
+const loggMiddleware = require('./src/middlewares/loggMiddleware');
 const app = express();
+
 // view engine setup
 app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
